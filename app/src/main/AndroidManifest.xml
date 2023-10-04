@@ -28,14 +28,14 @@
             </intent-filter>
         </activity>
 
-<!--        <instrumentation-->
-<!--        android:name="androidx.test.runner.AndroidJUnitRunner"-->
-<!--        android:targetPackage="com.example.firebasetestingapp">-->
+        <instrumentation
+        android:name="androidx.test.runner.AndroidJUnitRunner"
+        android:targetPackage="com.example.firebasetestingapp.core">
 
-<!--            <meta-data-->
-<!--            android:name="screenCaptureProcessors"-->
-<!--            android:value="com.google.firebase.testlab.screenshot.FirebaseScreenCaptureProcessor" />-->
-<!--    </instrumentation>-->
+            <meta-data
+            android:name="screenCaptureProcessors"
+            android:value="com.google.firebase.testlab.screenshot.FirebaseScreenCaptureProcessor" />
+    </instrumentation>
     </application>
 
 

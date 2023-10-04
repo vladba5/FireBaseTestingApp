@@ -1,4 +1,4 @@
-package com.example.firebasetestingapp.ui.news
+package com.example.firebasetestingapp.core.news
 
 import com.google.gson.annotations.SerializedName
 

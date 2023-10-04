@@ -1,9 +1,9 @@
-package com.example.firebasetestingapp.ui.news.data_sources
+package com.example.firebasetestingapp.core.news.data_sources
 
 import android.util.Log
-import com.example.firebasetestingapp.ui.news.News
-import com.example.firebasetestingapp.ui.news.News.Companion.mapToNews
-import com.example.firebasetestingapp.ui.news.NewsRepository
+import com.example.firebasetestingapp.core.news.News
+import com.example.firebasetestingapp.core.news.News.Companion.mapToNews
+import com.example.firebasetestingapp.core.news.NewsRepository
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.channels.awaitClose

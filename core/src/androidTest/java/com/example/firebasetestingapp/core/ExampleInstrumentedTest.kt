@@ -1,18 +1,14 @@
-package com.example.firebasetestingapp
+package com.example.firebasetestingapp.core
 
-import android.util.Log
-import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import androidx.test.runner.screenshot.Screenshot
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.firebasetestingapp.core.news.NewsRepository
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.firstOrNull
-import kotlinx.coroutines.test.runTest
-import org.junit.Assert.*
-import org.junit.Rule
+import kotlinx.coroutines.runBlocking
+
 import org.junit.Test
 import org.junit.runner.RunWith
 
+import org.junit.Assert.*
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -25,12 +21,11 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.example.firebasetestingapp", appContext.packageName)
+        assertEquals("com.example.firebasetestingapp.core.test", appContext.packageName)
     }
 
-
     @Test
-    fun test() = runTest {
+    fun test() = runBlocking {
         val repo  = NewsRepository()
 
         repo.observeUserNews().collect{
