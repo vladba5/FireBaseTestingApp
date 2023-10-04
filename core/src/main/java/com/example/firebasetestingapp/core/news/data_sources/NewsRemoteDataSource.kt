@@ -6,10 +6,13 @@ import com.example.firebasetestingapp.core.news.NewsRepository.Companion.newsTab
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-class NewsRemoteDataSource () {
+class NewsRemoteDataSource (
+    private val firebaseAuth: FirebaseAuth,
+    private val firebaseFireStore: FirebaseFirestore
+) {
 
-    private val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
-    private val firebaseFireStore: FirebaseFirestore = FirebaseFirestore.getInstance()
+//    private val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
+//    private val firebaseFireStore: FirebaseFirestore = FirebaseFirestore.getInstance()
 
     private val userUId get() = firebaseAuth.uid
 

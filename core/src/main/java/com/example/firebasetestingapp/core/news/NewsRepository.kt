@@ -7,10 +7,13 @@ import kotlinx.coroutines.flow.flow
 import javax.inject.Singleton
 
 @Singleton
-class NewsRepository() {
+class NewsRepository(
+    private val remote: NewsRemoteDataSource,
+    private val local: NewsLocalDataSource
+) {
 
-    private val remote: NewsRemoteDataSource = NewsRemoteDataSource()
-    private val local: NewsLocalDataSource = NewsLocalDataSource()
+//    private val remote: NewsRemoteDataSource = NewsRemoteDataSource()
+//    private val local: NewsLocalDataSource = NewsLocalDataSource()
 
     companion object {
         const val newsTable = "News"

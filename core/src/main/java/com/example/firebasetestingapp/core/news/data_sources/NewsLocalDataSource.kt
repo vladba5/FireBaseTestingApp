@@ -10,10 +10,13 @@ import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 
-class NewsLocalDataSource (){
+class NewsLocalDataSource (
+    private val firebaseAuth: FirebaseAuth,
+    private val firebaseFireStore: FirebaseFirestore
+){
 
-    private val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
-    private val firebaseFireStore: FirebaseFirestore = FirebaseFirestore.getInstance()
+//    private val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
+//    private val firebaseFireStore: FirebaseFirestore = FirebaseFirestore.getInstance()
 
     private val userUId get() = firebaseAuth.uid
 
