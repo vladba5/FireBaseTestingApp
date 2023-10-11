@@ -5,8 +5,9 @@ import com.example.firebasetestingapp.core.news.News
 import com.example.firebasetestingapp.core.news.NewsRepository.Companion.newsTable
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import javax.inject.Inject
 
-class NewsRemoteDataSource (
+class NewsRemoteDataSource @Inject constructor (
     private val firebaseAuth: FirebaseAuth,
     private val firebaseFireStore: FirebaseFirestore
 ) {

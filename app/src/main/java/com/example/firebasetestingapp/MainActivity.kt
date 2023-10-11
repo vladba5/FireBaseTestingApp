@@ -26,13 +26,19 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.example.firebasetestingapp.core.news.NewsRepository
 import com.example.firebasetestingapp.ui.theme.FireBaseTestingAppTheme
 import com.google.firebase.FirebaseApp
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import java.lang.Exception
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    @Inject
+    lateinit var newsRepository: NewsRepository
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        FirebaseApp.initializeApp(applicationContext)
         setContent {
             FireBaseTestingAppTheme {
                 // A surface container using the 'background' color from the theme
@@ -51,13 +57,11 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-
     fun getNews(){
         lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                val repo = NewsRepository()
                 try{
-                    repo.observeUserNews().collect{
+                    newsRepository.observeUserNews().collect{
                         Log.d("ptt123", it.toString())
                     }
                 }catch (ex: Exception){
