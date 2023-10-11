@@ -1,16 +1,19 @@
-package com.example.firebasetestingapp.ui.news
+package com.example.firebasetestingapp.core.news
 
-import com.example.firebasetestingapp.ui.news.data_sources.NewsLocalDataSource
-import com.example.firebasetestingapp.ui.news.data_sources.NewsRemoteDataSource
+import com.example.firebasetestingapp.core.news.data_sources.NewsLocalDataSource
+import com.example.firebasetestingapp.core.news.data_sources.NewsRemoteDataSource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Singleton
 
 @Singleton
-class NewsRepository() {
+class NewsRepository(
+    private val remote: NewsRemoteDataSource,
+    private val local: NewsLocalDataSource
+) {
 
-    private val remote: NewsRemoteDataSource = NewsRemoteDataSource()
-    private val local: NewsLocalDataSource = NewsLocalDataSource()
+//    private val remote: NewsRemoteDataSource = NewsRemoteDataSource()
+//    private val local: NewsLocalDataSource = NewsLocalDataSource()
 
     companion object {
         const val newsTable = "News"

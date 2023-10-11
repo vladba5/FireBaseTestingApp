@@ -36,6 +36,35 @@
     },
     {
       "client_info": {
+        "mobilesdk_app_id": "1:708994687496:android:d9b7246a5f23dbc5a0e7bd",
+        "android_client_info": {
+          "package_name": "com.example.firebasetestingapp.core.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "708994687496-db8qqmsckl4bb1de7o0n9svuelg4fhbr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqaONmx1Au3KPtrUxEnQBcT6p8ACK4jEI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "708994687496-db8qqmsckl4bb1de7o0n9svuelg4fhbr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:708994687496:android:5e0afda4c908aadea0e7bd",
         "android_client_info": {
           "package_name": "com.example.news_pulse.debug"

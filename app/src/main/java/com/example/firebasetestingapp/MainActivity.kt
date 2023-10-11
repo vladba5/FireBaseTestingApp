@@ -1,5 +1,6 @@
 package com.example.firebasetestingapp
 
+import android.app.Application
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
@@ -22,14 +23,16 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.example.firebasetestingapp.ui.news.NewsRepository
+import com.example.firebasetestingapp.core.news.NewsRepository
 import com.example.firebasetestingapp.ui.theme.FireBaseTestingAppTheme
+import com.google.firebase.FirebaseApp
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        FirebaseApp.initializeApp(applicationContext)
         setContent {
             FireBaseTestingAppTheme {
                 // A surface container using the 'background' color from the theme

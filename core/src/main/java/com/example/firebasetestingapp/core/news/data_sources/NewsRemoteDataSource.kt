@@ -1,15 +1,18 @@
-package com.example.firebasetestingapp.ui.news.data_sources
+package com.example.firebasetestingapp.core.news.data_sources
 
 import android.util.Log
-import com.example.firebasetestingapp.ui.news.News
-import com.example.firebasetestingapp.ui.news.NewsRepository.Companion.newsTable
+import com.example.firebasetestingapp.core.news.News
+import com.example.firebasetestingapp.core.news.NewsRepository.Companion.newsTable
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-class NewsRemoteDataSource () {
+class NewsRemoteDataSource (
+    private val firebaseAuth: FirebaseAuth,
+    private val firebaseFireStore: FirebaseFirestore
+) {
 
-    private val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
-    private val firebaseFireStore: FirebaseFirestore = FirebaseFirestore.getInstance()
+//    private val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
+//    private val firebaseFireStore: FirebaseFirestore = FirebaseFirestore.getInstance()
 
     private val userUId get() = firebaseAuth.uid
 
