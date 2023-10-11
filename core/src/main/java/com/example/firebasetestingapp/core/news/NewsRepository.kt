@@ -4,10 +4,11 @@ import com.example.firebasetestingapp.core.news.data_sources.NewsLocalDataSource
 import com.example.firebasetestingapp.core.news.data_sources.NewsRemoteDataSource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class NewsRepository(
+class NewsRepository @Inject constructor(
     private val remote: NewsRemoteDataSource,
     private val local: NewsLocalDataSource
 ) {
