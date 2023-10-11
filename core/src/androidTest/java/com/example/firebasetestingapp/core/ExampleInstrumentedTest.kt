@@ -60,11 +60,7 @@ class ExampleInstrumentedTest {
     @Test
     fun test() = runBlocking {
         newsRepository.observeUserNews().collect{
-            Log.d("ptt", "vlad $it")
             assertNotNull(it)
-            it.forEach {  article ->
-                Log.d("ptt", article.toString())
-            }
             assertTrue(it.isNotEmpty())
         }
     }
