@@ -13,9 +13,6 @@ class NewsRepository @Inject constructor(
     private val local: NewsLocalDataSource
 ) {
 
-//    private val remote: NewsRemoteDataSource = NewsRemoteDataSource()
-//    private val local: NewsLocalDataSource = NewsLocalDataSource()
-
     companion object {
         const val newsTable = "News"
     }

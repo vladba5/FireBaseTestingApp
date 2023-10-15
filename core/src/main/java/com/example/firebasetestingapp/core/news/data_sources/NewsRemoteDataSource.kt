@@ -11,10 +11,6 @@ class NewsRemoteDataSource @Inject constructor (
     private val firebaseAuth: FirebaseAuth,
     private val firebaseFireStore: FirebaseFirestore
 ) {
-
-//    private val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
-//    private val firebaseFireStore: FirebaseFirestore = FirebaseFirestore.getInstance()
-
     private val userUId get() = firebaseAuth.uid
 
     fun saveToUserArticles(article: News) {
