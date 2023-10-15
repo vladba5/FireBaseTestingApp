@@ -43,7 +43,6 @@ class NewsLocalDataSource @Inject constructor(
         // This block will be executed when the flow is closed
         awaitClose {
             listenerRegistration.remove() // Remove the Firestore snapshot listener
-            emptyList<News>()
         }
     }
 

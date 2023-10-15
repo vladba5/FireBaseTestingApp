@@ -55,6 +55,12 @@ dependencies {
     kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.44.2")
 
     androidTestImplementation("com.google.firebase:testlab-instr-lib:0.2")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
+    
+    api("org.robolectric:robolectric:4.9")
+    testImplementation("org.robolectric:robolectric:4.9")
+
 }
 
 // Allow references to generated code

@@ -26,6 +26,6 @@ class NewsRepository @Inject constructor(
     }
 
     fun observeUserNews(): Flow<List<News>> {
-        return flow { local.getUserNews() }
+        return local.getUserNews()
     }
 }

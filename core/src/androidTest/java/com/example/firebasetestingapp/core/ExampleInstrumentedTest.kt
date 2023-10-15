@@ -9,7 +9,12 @@ import com.google.firebase.FirebaseOptions
 
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.async
+import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.test.runBlockingTest
+import kotlinx.coroutines.test.runTest
 
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -57,11 +62,11 @@ class ExampleInstrumentedTest {
         assertEquals("com.example.firebasetestingapp.core.test", appContext.packageName)
     }
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     @Test
-    fun test() = runBlocking {
-        newsRepository.observeUserNews().collect{
-            assertNotNull(it)
-            assertTrue(it.isNotEmpty())
-        }
+    fun test() = runTest {
+        val result = newsRepository.observeUserNews().firstOrNull()
+        assertNotNull(result)
+        assertTrue(result?.isNotEmpty() ?: false)
     }
 }
