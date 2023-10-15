@@ -25,8 +25,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.example.firebasetestingapp.core.news.NewsRepository
 import com.example.firebasetestingapp.ui.theme.FireBaseTestingAppTheme
-import com.google.firebase.FirebaseApp
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.lang.Exception
 import javax.inject.Inject
@@ -58,14 +58,14 @@ class MainActivity : ComponentActivity() {
     }
 
     fun getNews(){
-        lifecycleScope.launch {
+        lifecycleScope.launch(Dispatchers.IO) {
             lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 try{
                     newsRepository.observeUserNews().collect{
-                        Log.d("ptt123", it.toString())
+                        Log.d("ptt", it.toString())
                     }
                 }catch (ex: Exception){
-                    Log.d("ptt123", "error1212")
+                    Log.d("ptt", "error1212")
                 }
 
             }
