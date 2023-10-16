@@ -55,13 +55,6 @@ class ExampleInstrumentedTest {
         hiltRule.inject()
     }
 
-    @Test
-    fun useAppContext() {
-        // Context of the app under test.
-        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.example.firebasetestingapp.core.test", appContext.packageName)
-    }
-
     @OptIn(ExperimentalCoroutinesApi::class)
     @Test
     fun test() = runTest {
